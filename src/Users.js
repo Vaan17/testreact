@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Usercard from "./Usercard";
+import Usercard from "./components/Usercard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button, Card } from "@material-ui/core";
 
 const Users = () => {
-  const notify = () => toast("Wow so easy !");
   const initialUsers = [
     {
       nom: "Fischer",
