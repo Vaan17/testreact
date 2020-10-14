@@ -124,7 +124,7 @@ const Users = () => {
           <TextField
             label="Prénom :"
             onChange={onInputChangePrenom}
-            placeholder="Entrez un Prénom"
+            placeholder="Entrez un Prénom Valide"
             multiline
             value={prenom}
           />
