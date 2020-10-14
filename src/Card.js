@@ -7,7 +7,7 @@ const Card = (props) => {
         width: "150px",
         marginBottom: "5px",
         border: "solid",
-        color: "red",
+        color: "yellow",
       }}
     >
       Case Numéro : {props.number}, children : {props.children}
