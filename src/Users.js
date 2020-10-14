@@ -1,4 +1,4 @@
-import React, { useState, useStyles } from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Usercard from "./components/Usercard";
 import { ToastContainer, toast } from "react-toastify";
