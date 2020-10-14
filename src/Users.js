@@ -4,7 +4,6 @@ import Usercard from "./components/Usercard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button, Card } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 const Users = () => {
@@ -12,59 +11,59 @@ const Users = () => {
     {
       nom: "Fischer",
       prenom: "Amaury",
-      age: "??",
+      date: "??",
     },
     {
       nom: "Aimé",
       prenom: "Melvin",
-      age: "18ans",
+      date: "18ans",
     },
     {
       nom: "Heymes",
       prenom: "Paul",
-      age: "??",
+      date: "??",
     },
     {
       nom: "Aimé",
       prenom: "Ethan",
-      age: "13ans",
+      date: "13ans",
     },
     {
       nom: "Aimé",
       prenom: "Lenny",
-      age: "10ans",
+      date: "10ans",
     },
     {
       nom: "Aimé",
       prenom: "Xavier",
-      age: "48ans",
+      date: "48ans",
     },
     {
       nom: "Artero-Saez",
       prenom: "Theo",
-      age: "17ans",
+      date: "17ans",
     },
     {
       nom: "Brevet",
       prenom: "Steve",
-      age: "18ans",
+      date: "18ans",
     },
     {
       nom: "Fortes-Vasconcelos",
       prenom: "Solano",
-      age: "18ans",
+      date: "18ans",
     },
     {
       nom: "Haicault",
       prenom: "Mathieu",
-      age: "18ans",
+      date: "18ans",
     },
   ];
 
   const [users, setUsers] = useState(initialUsers);
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
-  const [age, setAge] = useState("");
+  const [date, setDate] = useState("");
 
   const onInputChangeNom = (event) => {
     setNom(event.target.value);
@@ -74,8 +73,8 @@ const Users = () => {
     setPrenom(event.target.value);
   };
 
-  const onInputChangeAge = (event) => {
-    setAge(event.target.value);
+  const handleChangeDate = (event) => {
+    setDate(event.target.value);
   };
 
   const listItems = users.map((user) => <Usercard user={user} />);
@@ -94,14 +93,14 @@ const Users = () => {
     const newUser = {
       nom: nom,
       prenom: prenom,
-      age: age,
+      date: date,
     };
 
     setUsers([...users, newUser]);
 
     setNom("");
     setPrenom("");
-    setAge("");
+    setDate("");
 
     toast.success("Félicitation, vous avez ajouté un utilisateur !");
   };
@@ -124,23 +123,25 @@ const Users = () => {
           <TextField
             label="Prénom :"
             onChange={onInputChangePrenom}
-            placeholder="Entrez un Prénom Valide"
+            placeholder="Entrez un Prénom"
             multiline
             value={prenom}
           />
         </div>
         <div>
           <TextField
-            label="Age :"
-            onChange={onInputChangeAge}
-            placeholder="Entrez un Age"
-            multiline
-            value={age}
+            label="Date de naissance"
+            type="date"
+            onChange={handleChangeDate}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            value={date}
           />
         </div>
       </Card>
-      <Button onClick={delectUsers}>Supprimer tout les Utilisateurs</Button>
-      <Button onClick={resetUsers}>Supprimer les nouveaux Utilisateurs</Button>
+      <Button onClick={delectUsers}>Supprimer tout les utilisateurs</Button>
+      <Button onClick={resetUsers}>Supprimer les nouveaux utilisateurs</Button>
       <Button onClick={addUser}>Ajouter un utilisateur</Button>
       <ul style={{ display: "flex", flexWrap: "wrap" }}>{listItems}</ul>
       <ToastContainer />
