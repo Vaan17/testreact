@@ -4,6 +4,8 @@ import Usercard from "./components/Usercard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button, Card } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 const Users = () => {
   const initialUsers = [
@@ -110,16 +112,31 @@ const Users = () => {
       <h2>Vous etes sur la page : Users</h2>
       <Card style={{ margin: "2em", padding: "2em" }}>
         <div>
-          Nom:
-          <input onChange={onInputChangeNom} value={nom} />
+          <TextField
+            label="Nom :"
+            onChange={onInputChangeNom}
+            placeholder="Entrez un Nom"
+            multiline
+            value={nom}
+          />
         </div>
         <div>
-          prénom :
-          <input onChange={onInputChangePrenom} value={prenom} />
+          <TextField
+            label="Prénom :"
+            onChange={onInputChangePrenom}
+            placeholder="Entrez un Prénom"
+            multiline
+            value={prenom}
+          />
         </div>
         <div>
-          age:
-          <input onChange={onInputChangeAge} value={age} />
+          <TextField
+            label="Age :"
+            onChange={onInputChangeAge}
+            placeholder="Entrez un Age"
+            multiline
+            value={age}
+          />
         </div>
       </Card>
       <Button onClick={delectUsers}>Supprimer tout les Utilisateurs</Button>
