@@ -14,7 +14,7 @@ const Usercard = (props) => {
           <h3>
             Prénom : {props.user.prenom}
             <br></br>
-            Age : {props.user.age}
+            Date de naissance : {props.user.date}
           </h3>
         </CardContent>
         <CardActions>
