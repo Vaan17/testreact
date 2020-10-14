@@ -5,7 +5,7 @@ const Card = (props) => {
     <div
       style={{
         width: "150px",
-        marginBottom: "5px",
+        marginBottom: "3px",
         border: "solid",
         color: "yellow",
       }}
